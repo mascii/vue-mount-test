@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 const collection = {};
 
@@ -15,6 +16,23 @@ import Fruit from './components/Fruit.vue';
 collection['fruit'] = (props) => new Vue({
   render: h => h(Fruit, { props }),
 });
+
+/* PageView */
+import PageView from './components/PageView.vue';
+import pageStore from './stores/pageStore.js';
+import pageRoutes from './routes/pageRoutes.js';
+
+collection['page-view'] = (props) => {
+  const router = new VueRouter({
+    routes: pageRoutes
+  });
+
+  return new Vue({
+    store: pageStore,
+    router,
+    render: h => h(PageView, { props }),
+  });
+};
 
 /* Export */
 export default collection;
