@@ -1,8 +1,14 @@
 import Vue from 'vue'
-import App from './App.vue'
+import collection from './collection';
 
 Vue.config.productionTip = false
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+const elementsShoudMount = document.querySelectorAll('div[data-props]');
+
+for (const node of elementsShoudMount) {
+  const props = JSON.parse(node.getAttribute('data-props'));
+  const vueInstance = collection[node.id];
+  if (vueInstance) {
+    vueInstance(props).$mount('#' + node.id);
+  }
+}
