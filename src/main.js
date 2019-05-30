@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const props = JSON.parse(el.getAttribute('data-props') || '{}');
     const getVueInstance = collection[el.id];
     if (getVueInstance) {
-      getVueInstance(props).$mount('#' + el.id);
+      getVueInstance(props).$mount(el);
     }
   }
 });
