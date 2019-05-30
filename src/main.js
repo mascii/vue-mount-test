@@ -7,12 +7,14 @@ Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.config.productionTip = false
 
-const elementsShoudMount = document.querySelectorAll('div[data-props]');
+document.addEventListener('DOMContentLoaded', () => {
+  const elementsShouldBeMounted = document.querySelectorAll('div[data-props]');
 
-for (const node of elementsShoudMount) {
-  const props = JSON.parse(node.getAttribute('data-props'));
-  const vueInstance = collection[node.id];
-  if (vueInstance) {
-    vueInstance(props).$mount('#' + node.id);
+  for (const el of elementsShouldBeMounted) {
+    const props = JSON.parse(el.getAttribute('data-props'));
+    const getVueInstance = collection[el.id];
+    if (getVueInstance) {
+      getVueInstance(props).$mount('#' + el.id);
+    }
   }
-}
+});
