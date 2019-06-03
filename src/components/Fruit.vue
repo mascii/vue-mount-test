@@ -1,7 +1,7 @@
-<template>
+<template functional>
   <div>
-    Fruit Name: {{ name }}<br>
-    Color: {{ color }}
+    Fruit Name: {{ props.name }}<br>
+    Color: {{ props.color }}
   </div>
 </template>
 

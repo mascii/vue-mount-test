@@ -1,7 +1,7 @@
-<template>
+<template functional>
   <div>
-    Product Name: {{ name }}<br>
-    Color: {{ color }}
+    Product Name: {{ props.name }}<br>
+    Color: {{ props.color }}
   </div>
 </template>
 
