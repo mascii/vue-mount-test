@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>MediumComponent!</h3>
+    <h3><i class="far fa-circle"></i>MediumComponent!</h3>
     <SmallComponent class="small-comp" />
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>LargeComponent!</h2>
+    <h2><i class="fas fa-circle"></i>LargeComponent!</h2>
     <MediumComponent class="medium-comp" />
     <MediumComponent class="medium-comp ma_t-20" />
     <MediumComponent class="medium-comp ma_t-20" />
