@@ -34,5 +34,12 @@ collection['page-view'] = (props) => {
   });
 };
 
+/* LargeComponent */
+import LargeComponent from './components/LargeComponent.vue';
+
+collection['large-comp'] = (props) => new Vue({
+  render: h => h(LargeComponent, { props }),
+});
+
 /* Export */
 export default collection;
